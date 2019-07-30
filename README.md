@@ -1,24 +1,40 @@
-<h2 id="publicando-aplicação-dotnet-core-com-docker">Publicando aplicação dotnet core com docker</h2>
-<h4 id="passo-1---crie-arquivo-dockerfile">Passo 1 - Crie arquivo Dockerfile</h4>
-<p><em>Uma pasta antes da raizdo projeto</em></p>
-<pre class=" language-sh"><code class="prism  language-sh">FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
 
-LABEL version="1.0" maintainer="{Nome_Apliacação}"
+# Desenvolvedor front-end
 
-WORKDIR /app
+A Londrisoft está em busca de front-end para fazer parte de nossa equipe, buscamos alguém que tenha paixão por tecnologia e vontade de aprender.  
+Irá atuar no desenvolvimento de projetos novos e/ou manutenções em ferramentas já existentes.
 
-COPY ./{Nome_Aplicação}/dist .
+## Pré-requisitos
 
-ENTRYPOINT ["dotnet", "{Nome_Aplicação}.dll"]
-</code></pre>
-<h4 id="passo-2---gerando-um-imagem-docker">Passo 2 - Gerando um imagem docker</h4>
-<p><em>t - Nome da imagem</em><br>
-<em>. - Localizar o arquivo dockerfile no path onde está executando o comando</em></p>
-<pre class=" language-sh"><code class="prism  language-sh">docker build -t {Nome_Aplicação}:1.1 .
-</code></pre>
-<h4 id="passo-3---criando-o-container">Passo 3 - Criando o container</h4>
-<p><em>p - expor porta do container para o host</em><br>
-<em>name - nome do container</em></p>
-<pre class=" language-sh"><code class="prism  language-sh">docker run -it -p 123:123 --name {Nome_Container} {Nome_Aplicação}:1.1
-</code></pre>
+Ter boa lógica de programação;Comprometimento; Bom relacionamento interpessoal; Trabalho em equipe multidisciplinar.  
+Conhecimento em HTML 5 e CSS 3 responsivo (Bootstrap).  
+Conhecimento em versionamento com GitHub.  
+Conhecimento e experiência com Javascript;
 
+## Diferenciais
+
+Experiência com algum framework JavaScript (Vue, AngularJS).
+
+## Desafio Frontend
+
+### Como fazer
+
+```
+1. Faça um fork deste repositório.
+2. Crie uma branch com o seu nome.
+2. Adicione seu currículo ou link do linkedin na raiz do repositório.
+3. Envie-nos o PULL-REQUEST para que seja avaliado.
+
+```
+
+### O Desafio
+
+Talvez a tarefa mais comum para um desenvolvedor front-end é consumir uma API, nesse desafio você deve consumir uma API REST-FUL, criar uma lista de cliente com opções  
+de novo, alterar, editar e excluir.
+
+|Cliente|
+|--|
+|Nome|
+|CPF|
+|Telefone|
+|E-mail|
