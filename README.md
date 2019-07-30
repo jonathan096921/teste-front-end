@@ -1,42 +1,24 @@
-<h1 id="desenvolvedor-front-end">Desenvolvedor front-end</h1>
-<p>A Londrisoft está em busca de front-end para fazer parte de nossa equipe, buscamos alguém que tenha paixão por tecnologia e vontade de aprender.<br>
-Irá atuar no desenvolvimento de projetos novos e/ou manutenções em ferramentas já existentes.</p>
-<h2 id="pré-requisitos">Pré-requisitos</h2>
-<p>Ter boa lógica de programação;Comprometimento; Bom relacionamento interpessoal; Trabalho em equipe multidisciplinar.<br>
-Conhecimento em HTML 5 e CSS 3 responsivo (Bootstrap).<br>
-Conhecimento em versionamento com GitHub.<br>
-Conhecimento e experiência com Javascript;</p>
-<h2 id="diferenciais">Diferenciais</h2>
-<p>Experiência com algum framework JavaScript (Vue, AngularJS).</p>
-<h2 id="desafio-frontend">Desafio Frontend</h2>
-<h3 id="como-fazer">Como fazer</h3>
-<pre><code>1. Faça um fork deste repositório.
-2. Crie uma branch com o seu nome.
-2. Adicione seu currículo ou link do linkedin na raiz do repositório.
-3. Envie-nos o PULL-REQUEST para que seja avaliado.
-</code></pre>
-<h3 id="o-desafio">O Desafio</h3>
-<p>Talvez a tarefa mais comum para um desenvolvedor front-end é consumir uma API, nesse desafio você deve consumir uma API REST-FUL, criar uma lista de cliente com opções<br>
-de novo, alterar, editar e excluir.</p>
+<h2 id="publicando-aplicação-dotnet-core-com-docker">Publicando aplicação dotnet core com docker</h2>
+<h4 id="passo-1---crie-arquivo-dockerfile">Passo 1 - Crie arquivo Dockerfile</h4>
+<p><em>Uma pasta antes da raizdo projeto</em></p>
+<pre class=" language-sh"><code class="prism  language-sh">FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
 
-<table>
-<thead>
-<tr>
-<th>Cliente</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Nome</td>
-</tr>
-<tr>
-<td>CPF</td>
-</tr>
-<tr>
-<td>Telefone</td>
-</tr>
-<tr>
-<td>E-mail</td>
-</tr>
-</tbody>
-</table>
+LABEL version="1.0" maintainer="{Nome_Apliacação}"
+
+WORKDIR /app
+
+COPY ./{Nome_Aplicação}/dist .
+
+ENTRYPOINT ["dotnet", "{Nome_Aplicação}.dll"]
+</code></pre>
+<h4 id="passo-2---gerando-um-imagem-docker">Passo 2 - Gerando um imagem docker</h4>
+<p><em>t - Nome da imagem</em><br>
+<em>. - Localizar o arquivo dockerfile no path onde está executando o comando</em></p>
+<pre class=" language-sh"><code class="prism  language-sh">docker build -t {Nome_Aplicação}:1.1 .
+</code></pre>
+<h4 id="passo-3---criando-o-container">Passo 3 - Criando o container</h4>
+<p><em>p - expor porta do container para o host</em><br>
+<em>name - nome do container</em></p>
+<pre class=" language-sh"><code class="prism  language-sh">docker run -it -p 123:123 --name {Nome_Container} {Nome_Aplicação}:1.1
+</code></pre>
+
